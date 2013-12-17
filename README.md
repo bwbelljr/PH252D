@@ -1,0 +1,1 @@
+This is code for the PH252D final project estimating the impact of fungal spores on wheeze in asthmatic children from Fresno, CA. Eunice Lee, Roxanna Garcia, and Bob Bell jointly wrote the code. We acknowledge Laura Balzer and Alex Luedtke for sample code (fromlabs and homeworks) that helped us with our final project.
