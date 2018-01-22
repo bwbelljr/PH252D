@@ -1,0 +1,76 @@
+# ##############
+SL.glm.EstA<- function(Y, X, newX, family, ...) {
+  if(family$family=='binomial') {}
+  if(family$family=='gaussian'){
+  	 fit.glm<- glm(Y~ W1+ W2 + sinW3 + W4sq, data=X, family=family)
+    pred <- predict(fit.glm, newdata=newX, type='response')
+    fit<- list(object=fit.glm)
+   }
+  
+  out <- list(pred=pred, fit=fit)
+  class(out$fit) <- c('SL.glm.EstA')
+  return(out)
+}
+#############
+# Estimator B
+SL.glm.EstB<- function(Y, X, newX, family, ...) {
+  if(family$family=='binomial') {}
+  if(family$family=='gaussian'){
+  	 fit.glm<- glm(Y~ W1+ W2+W4+cosW5, data=X, family=family)
+    pred <- predict(fit.glm, newdata=newX, type='response')
+    fit<- list(object=fit.glm)
+
+  }
+  
+  out <- list(pred=pred, fit=fit)
+  class(out$fit) <- c('SL.glm.EstB')
+  return(out)
+}
+#####################
+# Estimator C
+SL.glm.EstC<- function(Y, X, newX, family, ...) {
+  if(family$family=='binomial') {
+  }
+  if(family$family=='gaussian'){
+  	fit.glm<- glm(Y ~ W3  + W4sq + cosW5 + W2*W5,data=X, family=family )
+    pred <- predict(fit.glm, newdata=newX, type='response')
+    fit<- list(object=fit.glm)
+  }
+  
+  out <- list(pred=pred, fit=fit)
+  class(out$fit) <- c('SL.glm.EstC')
+  return(out)
+}
+###################
+# Estimator D
+SL.glm.EstD<- function(Y, X, newX, family, ...) {
+  if(family$family=='binomial') {
+  }
+  if(family$family=='gaussian'){
+  	fit.glm<- glm(Y~   W1*W2*W5, data=X, family=family)
+    pred <- predict(fit.glm, newdata=newX, type='response')
+    fit<- list(object=fit.glm)
+  }
+  
+  out <- list(pred=pred, fit=fit)
+  class(out$fit) <- c('SL.glm.EstD')
+  return(out)
+}
+###################
+# Estimator E!
+SL.glm.EstE<- function(Y, X, newX, family, ...) {
+  if(family$family=='binomial') {}
+  if(family$family=='gaussian'){
+  	 fit.glm<- glm(Y~ W1*W2*W3*W4*W5*sinW3*W4sq*cosW5, data=X, family=family)
+    pred <- predict(fit.glm, newdata=newX, type='response')
+    fit<- list(object=fit.glm)
+   }
+  
+  out <- list(pred=pred, fit=fit)
+  class(out$fit) <- c('SL.glm.EstE')
+  return(out)
+}
+
+SL.gam.2 <- function (..., deg.gam = 2) {
+  SL.gam (... , deg.gam=deg.gam )
+}
